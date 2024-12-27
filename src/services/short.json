@@ -1,0 +1,426 @@
+{
+    "types": [
+        {
+            "id": 1,
+            "description": "AUTO",
+            "brands": [
+                {
+                    "id": 2,
+                    "description": "ALFA ROMEO",
+                    "models": [
+                        {
+                            "id": 3811,
+                            "description": "147 2.0 TS   5 PTAS DISTINCTIVE",
+                            "integrationCode": "101"
+                        },
+                        {
+                            "id": 3812,
+                            "description": "147 2.0 TS   5 PTAS DISTINCTIVE SS",
+                            "integrationCode": "103"
+                        },
+                        {
+                            "id": 3027,
+                            "description": "159 1.8 TBI DISTINCTIVE 200 CV",
+                            "integrationCode": "120"
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "description": "BMW",
+                    "models": [
+                        {
+                            "id": 3492,
+                            "description": "116I ACTIVE 3 P.",
+                            "integrationCode": "241"
+                        },
+                        {
+                            "id": 4537,
+                            "description": "116I ACTIVE 5 P.",
+                            "integrationCode": "176"
+                        },
+                        {
+                            "id": 2754,
+                            "description": "116I COMFORT 5 P.",
+                            "integrationCode": "290"
+                        },
+                        {
+                            "id": 1992,
+                            "description": "116I SPORT  5 P.",
+                            "integrationCode": "266"
+                        },
+                        {
+                            "id": 3092,
+                            "description": "116I SPORT  5 P. AUT",
+                            "integrationCode": "271"
+                        },
+                        {
+                            "id": 1991,
+                            "description": "116I URBAN  5 P.",
+                            "integrationCode": "265"
+                        }
+                        
+                    ]
+                },
+                {
+                    "id": 3,
+                    "description": "CHEVROLET",
+                    "models": [
+                        {
+                            "id": 3510,
+                            "description": "AGILE 1.4 LS",
+                            "integrationCode": "360"
+                        },
+                        {
+                            "id": 1657,
+                            "description": "AGILE 1.4 LS                  L/14",
+                            "integrationCode": "462"
+                        },
+                        {
+                            "id": 3145,
+                            "description": "AGILE 1.4 LS  SPIRIT",
+                            "integrationCode": "424"
+                        },
+                        {
+                            "id": 3511,
+                            "description": "AGILE 1.4 LT",
+                            "integrationCode": "361"
+                        }
+                    ]
+                },
+                {
+                    "id": 19,
+                    "description": "CITROEN",
+                    "models": [
+                        {
+                            "id": 1363,
+                            "description": "BERLINGO FURGON 1.4I BUSINESS",
+                            "integrationCode": "276"
+                        },
+                        {
+                            "id": 1364,
+                            "description": "BERLINGO FURGON 1.4I BUSINESS MIXT",
+                            "integrationCode": "285"
+                        },
+                        {
+                            "id": 2776,
+                            "description": "BERLINGO FURGON 1.4I CLUB",
+                            "integrationCode": "275"
+                        }
+                    ]
+                },
+                {
+                    "id": 8,
+                    "description": "FIAT",
+                    "models": [
+                        {
+                            "id": 2823,
+                            "description": "500  1.4 ABARTH",
+                            "integrationCode": "705"
+                        },
+                        {
+                            "id": 397,
+                            "description": "500  1.4 ABARTH 595 TURISMO",
+                            "integrationCode": "748"
+                        },
+                        {
+                            "id": 396,
+                            "description": "500  1.4 CABRIO",
+                            "integrationCode": "742"
+                        },
+                        {
+                            "id": 1680,
+                            "description": "500  1.4 CULT FIRE",
+                            "integrationCode": "688"
+                        }
+                    ]
+                },
+                {
+                    "id": 7,
+                    "description": "FORD",
+                    "models": [
+                        {
+                            "id": 3942,
+                            "description": "ECO SPORT 1.4  TDCI XL PLUS   L/07",
+                            "integrationCode": "479"
+                        },
+                        {
+                            "id": 3943,
+                            "description": "ECO SPORT 1.4  TDCI XLS       L/07",
+                            "integrationCode": "480"
+                        },
+                        {
+                            "id": 1706,
+                            "description": "ECO SPORT 1.5  TDCI S         L/13",
+                            "integrationCode": "583"
+                        },
+                        {
+                            "id": 1707,
+                            "description": "ECO SPORT 1.5  TDCI SE        L/13",
+                            "integrationCode": "584"
+                        }
+                    ]
+                },
+                {
+                    "id": 47,
+                    "description": "PEUGEOT",
+                    "models": [
+                        {
+                            "id": 689,
+                            "description": "2008 1.6 ACTIVE",
+                            "integrationCode": "700"
+                        },
+                        {
+                            "id": 5031,
+                            "description": "2008 1.6 ACTIVE               L/19",
+                            "integrationCode": "750"
+                        },
+                        {
+                            "id": 690,
+                            "description": "2008 1.6 ALLURE",
+                            "integrationCode": "701"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "description": "CAMION",
+            "brands": [
+                {
+                    "id": 2,
+                    "description": "ALFA ROMEO",
+                    "models": [
+                        {
+                            "id": 3811,
+                            "description": "147 2.0 TS   5 PTAS DISTINCTIVE",
+                            "integrationCode": "101"
+                        },
+                        {
+                            "id": 3812,
+                            "description": "147 2.0 TS   5 PTAS DISTINCTIVE SS",
+                            "integrationCode": "103"
+                        },
+                        {
+                            "id": 3027,
+                            "description": "159 1.8 TBI DISTINCTIVE 200 CV",
+                            "integrationCode": "120"
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "description": "BMW",
+                    "models": [
+                        {
+                            "id": 3492,
+                            "description": "116I ACTIVE 3 P.",
+                            "integrationCode": "241"
+                        },
+                        {
+                            "id": 4537,
+                            "description": "116I ACTIVE 5 P.",
+                            "integrationCode": "176"
+                        },
+                        {
+                            "id": 2754,
+                            "description": "116I COMFORT 5 P.",
+                            "integrationCode": "290"
+                        },
+                        {
+                            "id": 1992,
+                            "description": "116I SPORT  5 P.",
+                            "integrationCode": "266"
+                        },
+                        {
+                            "id": 3092,
+                            "description": "116I SPORT  5 P. AUT",
+                            "integrationCode": "271"
+                        },
+                        {
+                            "id": 1991,
+                            "description": "116I URBAN  5 P.",
+                            "integrationCode": "265"
+                        }
+                        
+                    ]
+                },
+                {
+                    "id": 3,
+                    "description": "CHEVROLET",
+                    "models": [
+                        {
+                            "id": 3510,
+                            "description": "AGILE 1.4 LS",
+                            "integrationCode": "360"
+                        },
+                        {
+                            "id": 1657,
+                            "description": "AGILE 1.4 LS                  L/14",
+                            "integrationCode": "462"
+                        },
+                        {
+                            "id": 3145,
+                            "description": "AGILE 1.4 LS  SPIRIT",
+                            "integrationCode": "424"
+                        },
+                        {
+                            "id": 3511,
+                            "description": "AGILE 1.4 LT",
+                            "integrationCode": "361"
+                        }
+                    ]
+                },
+                {
+                    "id": 19,
+                    "description": "CITROEN",
+                    "models": [
+                        {
+                            "id": 1363,
+                            "description": "BERLINGO FURGON 1.4I BUSINESS",
+                            "integrationCode": "276"
+                        },
+                        {
+                            "id": 1364,
+                            "description": "BERLINGO FURGON 1.4I BUSINESS MIXT",
+                            "integrationCode": "285"
+                        },
+                        {
+                            "id": 2776,
+                            "description": "BERLINGO FURGON 1.4I CLUB",
+                            "integrationCode": "275"
+                        }
+                    ]
+                },
+                {
+                    "id": 8,
+                    "description": "FIAT",
+                    "models": [
+                        {
+                            "id": 2823,
+                            "description": "500  1.4 ABARTH",
+                            "integrationCode": "705"
+                        },
+                        {
+                            "id": 397,
+                            "description": "500  1.4 ABARTH 595 TURISMO",
+                            "integrationCode": "748"
+                        },
+                        {
+                            "id": 396,
+                            "description": "500  1.4 CABRIO",
+                            "integrationCode": "742"
+                        },
+                        {
+                            "id": 1680,
+                            "description": "500  1.4 CULT FIRE",
+                            "integrationCode": "688"
+                        }
+                    ]
+                },
+                {
+                    "id": 7,
+                    "description": "FORD",
+                    "models": [
+                        {
+                            "id": 3942,
+                            "description": "ECO SPORT 1.4  TDCI XL PLUS   L/07",
+                            "integrationCode": "479"
+                        },
+                        {
+                            "id": 3943,
+                            "description": "ECO SPORT 1.4  TDCI XLS       L/07",
+                            "integrationCode": "480"
+                        },
+                        {
+                            "id": 1706,
+                            "description": "ECO SPORT 1.5  TDCI S         L/13",
+                            "integrationCode": "583"
+                        },
+                        {
+                            "id": 1707,
+                            "description": "ECO SPORT 1.5  TDCI SE        L/13",
+                            "integrationCode": "584"
+                        }
+                    ]
+                },
+                {
+                    "id": 47,
+                    "description": "PEUGEOT",
+                    "models": [
+                        {
+                            "id": 689,
+                            "description": "2008 1.6 ACTIVE",
+                            "integrationCode": "700"
+                        },
+                        {
+                            "id": 5031,
+                            "description": "2008 1.6 ACTIVE               L/19",
+                            "integrationCode": "750"
+                        },
+                        {
+                            "id": 690,
+                            "description": "2008 1.6 ALLURE",
+                            "integrationCode": "701"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "years": [
+        {
+            "id": 2010,
+            "description": "2010"
+        },
+        {
+            "id": 2011,
+            "description": "2011"
+        },
+        {
+            "id": 2012,
+            "description": "2012"
+        },
+        {
+            "id": 2013,
+            "description": "2013"
+        },
+        {
+            "id": 2014,
+            "description": "2014"
+        },
+        {
+            "id": 2015,
+            "description": "2015"
+        },
+        {
+            "id": 2016,
+            "description": "2016"
+        },
+        {
+            "id": 2017,
+            "description": "2017"
+        },
+        {
+            "id": 2018,
+            "description": "2018"
+        },
+        {
+            "id": 2019,
+            "description": "2019"
+        },
+        {
+            "id": 2020,
+            "description": "2020"
+        },
+        {
+            "id": 2021,
+            "description": "2021"
+        },
+        {
+            "id": 2022,
+            "description": "2022"
+        }
+    ]
+}
