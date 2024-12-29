@@ -23,7 +23,8 @@ export const BienView = () => {
     tna:"",
     tea:'',
     capital_en_uvas:"",
-    cftea:""
+    cftea:"",
+    valor_uva_hoy:""
 
   })
   const [selectValues, setSelectValues] = useState({
@@ -33,7 +34,7 @@ export const BienView = () => {
     modelo: "",
     tasa: "",
     amortizacion: "",
-    cuotas: ""
+    cuotas: "",
   });
 
   const handleChange = (e: number) => {
@@ -50,12 +51,14 @@ export const BienView = () => {
         const ratesData = await getRates();
         setRates(ratesData);
         setTasasVariables(
-            {   cuota_pura_sin_iva:`$ ${rates?.rates.pureEstimatedInstallmentValue}`,
-            cuota_pura_con_iva:`$ ${rates?.rates.pureEstimatedInstallmentValueWithIva}`,
-            tna:`${rates?.rates.tna}%`,
-            tea:`${rates?.rates.tea}%`,
-            capital_en_uvas:`$ ${rates?.rates.pureEstimatedInstallmentValueInUVA}`,
-            cftea:`${rates?.rates.cftea}%`
+            {
+            cuota_pura_sin_iva:`$ ${transformarNumero(ratesData?.rates.pureEstimatedInstallmentValue)}`,
+            cuota_pura_con_iva:`$ ${transformarNumero(ratesData?.rates.pureEstimatedInstallmentValueWithIva)}`,
+            tna:`${transformarNumero(ratesData?.rates.tna)}%`,
+            tea:`${transformarNumero(ratesData?.rates.tea)}%`,
+            capital_en_uvas:`$ ${transformarNumero(rates?.rates.pureEstimatedInstallmentValueInUVA)}`,
+            cftea:`${transformarNumero(rates?.rates.cftea)}%`,
+            valor_uva_hoy:`$ ${transformarNumero(rates?.rates.uvaCurrentValue)}`
         }
     )
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -120,7 +123,7 @@ useEffect(() => {
 }, [selectValues])
 
   const selectFields = vehicles && rates ? [
-    { label: "Tipo", placeh:"Ej. AUTO", value: selectValues.tipo, options: vehicles.types.map(item => ({ label: item.description, value: item.description, id: item.id })) },
+    { label: "Tipo", placeh:"Ej. Máquina Agrícola", value: selectValues.tipo, options: vehicles.types.map(item => ({ label: item.description, value: item.description, id: item.id })) },
     { label: "Marca",placeh:"Ej. Ford", value: selectValues.marca, options: marcaOptions },
     { label: "Año", placeh:"Año del bien",value: selectValues.año, options: vehicles.years.map(item => ({ label: item.description, value: item.description})) },
     { label: "Modelo",placeh:"Modelo del bien", value: selectValues.modelo, options: modeloOptions },
@@ -136,12 +139,17 @@ useEffect(() => {
     });
   };
 
+  const transformarNumero = (numero: number | undefined) => {
+    
+    return numero ? numero.toString().replace('.', ','): numero;
+  };
+
   return (
     <div>
       <h1>Agregar bien</h1>
       <h2>Por favor completa los datos del bien</h2>
 
-      <div className="slidecontainer">
+      <div className="slideContainer">
         {rates && rates.riskEvaluation.riskEvaluationResultDTO && (
             <>
             <div>max {rates?.riskEvaluation.riskEvaluationResultDTO.finalAmount }</div>
@@ -155,14 +163,14 @@ useEffect(() => {
             value={value}
             className="slider"
             onChange={(e) => handleChange(Number(e.target.value))}
-            style={sliderStyle} // Aplicar el estilo dinámico
+            style={sliderStyle}
           />
         </>
       )}
       </div>
 
       {vehicles && rates &&
-        <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "flex-start" }}>
+        <div className="divWraper">
           {selectFields.map((field) => (
             <div key={field.label} className="w-1/4 p-2 m-2 border rounded relative">
               <label
@@ -199,6 +207,28 @@ useEffect(() => {
             </div>
           ))}
         </div>}
+
+        <div className='divWraper'>
+            <p>Cuota pura estimada sin IVA: {tasasVariables.cuota_pura_sin_iva}</p>
+            <p>Cuota pura estimada con IVA: {tasasVariables.cuota_pura_con_iva}</p>
+            <p>TNA: {tasasVariables.tna}</p>
+            <p>TEA: {tasasVariables.tea}</p>
+            <p>CFTEA: {tasasVariables.cftea}</p>
+            
+            
+            
+        </div>
+        <div className='divWraper'>
+           <p>Capital en UVAs: {tasasVariables.capital_en_uvas}</p>
+            <p>TNA: {tasasVariables.tna}</p>
+            <p>TEA: {tasasVariables.tea}</p>
+            <p>CFTEA: {tasasVariables.cftea}</p>
+            <p>Valor UVA hoy: {tasasVariables.valor_uva_hoy} </p>
+            
+            
+            
+        </div>
+        
     </div>
   );
 };
