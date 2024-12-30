@@ -1,4 +1,5 @@
 .slideContainer {
+  max-width: 1180px;
   width: 100%;
 }
 
@@ -39,18 +40,63 @@
   border-radius: 50%;
   
 }
+.divWraperSB{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1250px;
+  margin: 10px 0 10px 0
+  
 
-.divWraper{
+}
+.divWraperSA{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1250px;
+ 
+
+}
+.divWraperFS{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
-  max-width: 1100px;
+  max-width: 1220px;
  
 
 }
 
-.divWraper > p {
-width: 270px;
+.divWraperFE{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: 1180px;
+ 
+
 }
 
+.divWraperSB > p {
+  font-size: small;
+  width: 200px;
+  color: lightslategray;
+}
+
+.primary{
+  padding: 10px 20px;
+  margin-right: 5px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.secondary{
+
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  color: white;
+}

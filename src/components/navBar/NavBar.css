@@ -1,0 +1,54 @@
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px 0 12px 0;
+    max-width: 1200px;
+    width: 100%;
+  }
+  
+
+.divWraperFS{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: 1200px;
+   
+  
+  }
+  
+  .divWraperFE{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    max-width: 1250px;
+   
+  
+  }
+  
+  @media (max-width: 768px) {
+    .hideElement {
+      display: none; /* Ocultamos el navbar en pantallas móviles */
+    }
+    .navbar {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+      padding: 10;
+      max-width: 1200px;
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .showElement {
+      display: none; /* Ocultamos el navbar en pantallas móviles */
+    }
+  }
+ 
