@@ -8,6 +8,7 @@ import { GoPencil } from "react-icons/go";
 import { EditNumber } from "@/components/editNumber/EditNumber";
 import Breadcrumb from "@/components/breadCrumb/BreadCrumb";
 import { useMyContext } from "@/contexs/Context";
+import { FaDollarSign } from "react-icons/fa6";
 
 interface Option {
   label: string;
@@ -258,11 +259,13 @@ export const BienView = () => {
     const enteroFormateado = entero.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     
     return (
-      <div className="divWraperFS" style={{ justifyContent: "center" }}>
+      <div className="divWraperFS" style={{ justifyContent: "center", alignItems:"center" }}>
+        <span style={{ fontSize: "45px", marginRight:"-5px" }}><FaDollarSign/></span>
         <span>
-          <span style={{ fontSize: "30px" }}>${enteroFormateado}</span>
-          <span style={{ fontSize: "20px" }}>,</span>
-          <span style={{ fontSize: "20px" }}>
+        
+          <span style={{ fontSize: "50px", fontWeight:"bold" }}>{enteroFormateado}</span>
+          <span style={{ fontSize: "30px", fontWeight:"bold" }}>,</span>
+          <span style={{ fontSize: "30px", fontWeight:"bold", bottom:0 }}>
             {decimalesFinales.slice(0, 2)}
           </span>
         </span>
@@ -333,7 +336,7 @@ export const BienView = () => {
     <div style={{ maxWidth: 1220, padding: 10 }}>
       <Breadcrumb paths={breadcrumbPaths} />
       <h1 style={{ fontSize: '32px', fontWeight: 'bold', marginTop: 20 }}>Agregar bien</h1>
-      <h2 style={{ fontSize: '18px', color: "grey", marginTop: 20 }}>Por favor completa los datos del bien:</h2>
+      <h2 style={{ fontSize: '18px', color: "grey" }}>Por favor completa los datos del bien:</h2>
 
       <div className="slideContainer">
         {rates && rates.riskEvaluation.riskEvaluationResultDTO && (

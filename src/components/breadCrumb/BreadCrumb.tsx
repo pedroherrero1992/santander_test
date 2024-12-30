@@ -12,7 +12,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ paths }) => {
 
   return (
     <nav aria-label="breadcrumb">
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div className="flex items-center mt-0 lg:mt-10">
             {/*horrible el -5 pero todas los iconos le agrega un margen de 5 px al usar tendria que generar un svg propio sin el margen por cuestiones de tiempo se opto por esta soluc */}
           <IoChevronBackOutline onClick={()=>window.alert("Volver")}  style={{ fontSize: '20px', color: '#888', marginLeft:-5 }} />
         

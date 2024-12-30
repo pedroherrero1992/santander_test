@@ -6,7 +6,8 @@ import Image from 'next/image';
 
 import { IoMenu } from "react-icons/io5";
 import { CiBellOn, CiBellOff } from "react-icons/ci";
-import { FaPowerOff } from "react-icons/fa";
+import { FaPowerOff } from "react-icons/fa6";
+
 import logo from '../../../public/logo.png'
 import logoSM from '../../../public/logoSM.png'
 import { useMyContext } from "@/contexs/Context";
