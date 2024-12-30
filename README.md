@@ -1,7 +1,7 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ### Explicación:
-- **Mocked Data**: Añadimos una sección que debido a restricciones de Cross-Origin, no se pudo conectar al backend directamente, por lo que se utilizaron datos "mockeados" obtenidos desde POSTMAN para continuar el desarrollo esto se puede modificar sin problema cuando se agrege el allowed origin correspondiente.
+- **Mocked Data**: Añadimos una sección que debido a restricciones de Cross-Origin, no se pudo conectar al backend directamente, por lo que se utilizaron datos "mockeados" obtenidos desde POSTMAN para continuar el desarrollo, esto se puede modificar sin problema cuando se agrege el allowed origin correspondiente.
 - **Propósito del Mock**: Explicamos que los datos simulados permiten seguir trabajando en la parte del frontend mientras se resuelve el problema de conectividad con el backend.
 
 
