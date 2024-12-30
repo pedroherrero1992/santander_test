@@ -25,7 +25,7 @@ export const BienView = () => {
   const [openEditNumber, setOpenEditNumber] = useState(false);
   const [bgColor, setBgColor] = useState("white");
   const [bgColorSave, setBgColorSave] = useState("red");
-  const breadcrumbPaths = ['Volver', 'Simulacion', 'Agregar bien'];
+  const breadcrumbPaths = ['Volver', 'Simulación', 'Agregar bien'];
   const [tasasVariables, setTasasVariables] = useState({
     cuota_pura_sin_iva: "",
     cuota_pura_con_iva: "",

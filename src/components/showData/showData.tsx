@@ -13,7 +13,7 @@ const ShowData = () => {
 
   return (
     <div style={{marginTop:40}}>
-        <FaPowerOff /><h1>El icono de power activa o desactiva este componente, se agrego para cumplir con el requisito de almacenar data en un contex o storage</h1>
+        <FaPowerOff /><h1>El icono de power activa o desactiva este componente, se agregó para cumplir con el requisito de almacenar data en un contex o storage</h1>
       <h3>Datos Guardados:</h3>
       {data.length > 0 ? (
         <pre>{JSON.stringify(data, null, 2)}</pre> // Mostrar los datos guardados en formato JSON
