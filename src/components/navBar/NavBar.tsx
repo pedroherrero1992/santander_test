@@ -9,18 +9,22 @@ import { CiBellOn, CiBellOff } from "react-icons/ci";
 import { FaPowerOff } from "react-icons/fa";
 import logo from '../../../public/logo.png'
 import logoSM from '../../../public/logoSM.png'
+import { useMyContext } from "@/contexs/Context";
 
 // Navbar Component
 const Navbar = () => {
   const [bellOn, setBellOn] = useState(true); 
   const [powerOn, setPowerOn] = useState(false); 
+  const { toggleShowData } = useMyContext(); 
+
 
   const handleBellClick = () => {
     setBellOn(prev => !prev); 
   };
 
   const handlePowerClick = () => {
-    setPowerOn(prev => !prev);
+    toggleShowData(); // Llamamos a la función toggleShowData al hacer clic en Power Off
+    setPowerOn(prev => !prev); // Cambia el estado de powerOn
   };
 
   return (
@@ -70,3 +74,7 @@ const Navbar = () => {
 };
 
 export default Navbar;
+function setPowerClicked(arg0: (prev: any) => boolean) {
+  throw new Error("Function not implemented.");
+}
+

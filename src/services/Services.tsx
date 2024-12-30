@@ -21,7 +21,8 @@ const headers = {
 };
 
 
-const isLocalhost = () => window.location.hostname === 'localhost';
+//const isLocalhost = () => window.location.hostname === 'localhost';
+const isLocalhost = () => true
 
 // Función para obtener los vehículos
 export const getVehicles = async (): Promise<Vehicles> => {

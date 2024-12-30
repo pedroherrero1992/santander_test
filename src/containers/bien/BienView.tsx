@@ -7,6 +7,7 @@ import { RatesI, Vehicles } from "@/auxiliar/interfaces";
 import { GoPencil } from "react-icons/go";
 import { EditNumber } from "@/components/editNumber/EditNumber";
 import Breadcrumb from "@/components/breadCrumb/BreadCrumb";
+import { useMyContext } from "@/contexs/Context";
 
 interface Option {
   label: string;
@@ -14,6 +15,7 @@ interface Option {
   id?: number;
 }
 export const BienView = () => {
+  const { addData } = useMyContext();
   const [vehicles, setVehicles] = useState<Vehicles>();
   const [rates, setRates] = useState<RatesI>();
   const [error, setError] = useState<string | null>(null);
@@ -45,6 +47,9 @@ export const BienView = () => {
 
   const handleChange = (e: number) => {
     setValue(e);
+  };
+  const isFormValid = () => {
+    return Object.values(selectValues).every(value => value !== ""); // Verifica si todos los valores están completos
   };
 
   // Cargar los datos de vehículos y tasas
@@ -251,7 +256,7 @@ export const BienView = () => {
 
     // Agregar puntos cada tres dígitos en la parte entera
     const enteroFormateado = entero.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
+    
     return (
       <div className="divWraperFS" style={{ justifyContent: "center" }}>
         <span>
@@ -266,7 +271,7 @@ export const BienView = () => {
             setOpenEditNumber(true);
           }}
           style={{
-            fontSize: 24,
+            fontSize: 30,
             color: "#82B5CA",
             backgroundColor: "#F5F9FA",
             padding: 5,
@@ -277,18 +282,64 @@ export const BienView = () => {
       </div>
     );
   };
+  const handleSave = () => {
+    if (
+      rates && 
+      selectValues.tipo &&
+      selectValues.marca &&
+      selectValues.anno &&
+      selectValues.modelo &&
+      selectValues.tasa &&
+      selectValues.amortizacion &&
+      selectValues.cuotas
+    ) {
+      const newBien = {
+        tipo: selectValues.tipo,
+        marca: selectValues.marca,
+        anno: selectValues.anno,
+        modelo: selectValues.modelo,
+        tasa: selectValues.tasa,
+        amortizacion: selectValues.amortizacion,
+        cuotas: selectValues.cuotas,
+        montoFinanciar: rates?.riskEvaluation.riskEvaluationResultDTO.finalAmount /
+        100 *
+        value <
+        rates?.riskEvaluation.riskEvaluationResultDTO.minAmount
+        ? rates?.riskEvaluation.riskEvaluationResultDTO.minAmount
+        : (value *
+          rates?.riskEvaluation.riskEvaluationResultDTO
+            .finalAmount) /
+        100, 
+      };
 
+      addData(newBien); // Guardamos los datos en el contexto
+
+      alert("Bien guardado correctamente!");
+      setSelectValues({
+        tipo: "",
+        marca: "",
+        anno: "",
+        modelo: "",
+        tasa: "",
+        amortizacion: "",
+        cuotas: "",
+      });
+      setValue(1); // Resetear el valor del slider
+    } else {
+      alert("Por favor complete todos los campos.");
+    }
+  };
   return (
     <div style={{ maxWidth: 1220, padding: 10 }}>
       <Breadcrumb paths={breadcrumbPaths} />
-      <h1 style={{ fontSize: '32px', fontWeight: 'bold', marginTop:20}}>Agregar bien</h1>
-      <h2 style={{ fontSize: '18px', color:"grey", marginTop:20 }}>Por favor completa los datos del bien:</h2>
+      <h1 style={{ fontSize: '32px', fontWeight: 'bold', marginTop: 20 }}>Agregar bien</h1>
+      <h2 style={{ fontSize: '18px', color: "grey", marginTop: 20 }}>Por favor completa los datos del bien:</h2>
 
       <div className="slideContainer">
         {rates && rates.riskEvaluation.riskEvaluationResultDTO && (
           <>
 
-            <div style={{textAlign:"center"}}>
+            <div style={{ textAlign: "center" }}>
               Monto a financiar:{" "}
               {transformarNumeroTitulo(
                 (rates?.riskEvaluation.riskEvaluationResultDTO.finalAmount /
@@ -313,17 +364,17 @@ export const BienView = () => {
             />
 
             <div className="divWraperSB">
-              <div style={{fontWeight: 'bold'}}>
-                  Mínimo: ${agregarPuntoCadaTres(rates?.riskEvaluation.riskEvaluationResultDTO.minAmount)}
+              <div style={{ fontWeight: 'bold' }}>
+                Mínimo: ${agregarPuntoCadaTres(rates?.riskEvaluation.riskEvaluationResultDTO.minAmount)}
               </div>
               <div>
-                <span style={{marginRight:20, fontWeight:"bold"}}>
+                <span style={{ marginRight: 20, fontWeight: "bold" }}>
 
-                Máximo: ${agregarPuntoCadaTres(rates?.riskEvaluation.riskEvaluationResultDTO.finalAmount)}
+                  Máximo: ${agregarPuntoCadaTres(rates?.riskEvaluation.riskEvaluationResultDTO.finalAmount)}
                 </span>
-                <span style={{fontWeight: 'bold'}}>
+                <span style={{ fontWeight: 'bold' }}>
 
-                Total: ${agregarPuntoCadaTres(4000000)}
+                  Total: ${agregarPuntoCadaTres(4000000)}
                 </span>
 
 
@@ -417,12 +468,13 @@ export const BienView = () => {
         </button>
 
         <button
-          onClick={() => {
-            window.alert("Guardar")
-          }}
+          onClick={() => { handleSave() }}
           className="secondary"
-          style={{ backgroundColor: bgColorSave }}
-          disabled={false}
+          style={{
+            backgroundColor: isFormValid() ? bgColorSave : "#D3D3D3",  
+            cursor: isFormValid() ? "pointer" : "not-allowed", 
+          }}
+          disabled={!isFormValid()} // Deshabilitar si el formulario no es válido
           onMouseEnter={() => { setBgColorSave("#FF6262"); }}
           onMouseLeave={() => { setBgColorSave("red"); }}
         >
