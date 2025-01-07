@@ -56,7 +56,7 @@ const Navbar = () => {
 
       <div className="divWraperFE">
        
-        <span className="hideElement">Ir a Panel</span>
+        <span className="hideElement" style={{color:'#5DA0BB', fontWeight:"bold"}}>Ir al Panel</span>
         <div className="iconStyle" onClick={handleBellClick}>
           {bellOn ? (
             <CiBellOn style={{ fontSize: '24px', color: 'black', marginInline:10 }} />
