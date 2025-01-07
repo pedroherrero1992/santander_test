@@ -62,9 +62,9 @@ export const EditNumber = ({ isOpen, min, max, onClose, setValue }: { min: numbe
                 <h2>Monto a financiar</h2>
 
 
-                {inputNumber > max && <span style={{ display: 'flex', alignItems: " center", alignContent: "center", justifyContent: "center" }}><IoAlertCircleOutline style={{ color: 'red', marginRight: '5px' }} /> El monto debe ser menor a : {max}</span>}
-                {inputNumber < min && inputNumber !== 0 && <span style={{ display: 'flex', alignItems: " center", alignContent: "center", justifyContent: "center" }}><IoAlertCircleOutline style={{ color: 'red', marginRight: '5px' }} /> El monto debe ser mayor a : {min}</span>}
-                {inputNumber === 0 && <span style={{ display: 'flex', alignItems: " center", alignContent: "center", justifyContent: "center" }}><IoAlertCircleOutline style={{ color: 'red', marginRight: '5px' }} /> Debe ingresar un valor</span>}
+                {inputNumber > max && <span style={{ display: 'flex',  }}><IoAlertCircleOutline style={{ color: 'red', marginRight: '5px',marginTop:5 }} /> El monto debe ser menor a : {max}</span>}
+                {inputNumber < min && inputNumber !== 0 && <span style={{ display: 'flex',}}><IoAlertCircleOutline style={{ color: 'red', marginRight: '5px',marginTop:5 }} /> El monto debe ser mayor a : {min}</span>}
+                {inputNumber === 0 && <span style={{ display: 'flex', alignItems: " center", alignContent: "center", justifyContent: "flex-start" }}><IoAlertCircleOutline style={{ color: 'red', marginRight: '5px' }} /> Debe ingresar un valor</span>}
 
 
                 <input
